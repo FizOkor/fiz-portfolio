@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 
 export default function ProjectsPage() {
   const projects = [
@@ -9,16 +9,18 @@ export default function ProjectsPage() {
       initials: "DA",
       gradient: "from-blue-600 to-purple-600",
       link: "https://d-arena.onrender.com",
+      git_link: 'https://github.com/FizOkor/D_Arena',
       tech: ["React", "Node.js", "Express", "Socket.IO", "Web3", "MongoDB"],
     },
     {
-      title: "Fiz Learning",
+      title: "NFT-Gen",
       description:
-        "Online education platform with smooth course access and user-friendly interface. Developed with React.js for optimal learning experience.",
-      initials: "FL",
-      gradient: "from-green-600 to-teal-600",
-      link: "https://fiz-learning.netlify.app",
-      tech: ["React", "JavaScript", "CSS", "Responsive Design"],
+        "Personal NFT creator from image.",
+      initials: "NG",
+      gradient: "from-teal-600 to-purple-600",
+      link: "https://github.com/FizOkor/NFT-dApp",
+      git_link: 'https://github.com/FizOkor/NFT-dApp',
+      tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
     },
     {
       title: "EchoGear Landing Page",
@@ -27,7 +29,18 @@ export default function ProjectsPage() {
       initials: "EG",
       gradient: "from-orange-600 to-red-600",
       link: "https://fizokor.github.io/Echo-Gear",
+      git_link: 'https://github.com/FizOkor/Echo-Gear',
       tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    },
+    {
+      title: "Fiz Learning",
+      description:
+        "Online education platform with smooth course access and user-friendly interface. Developed with React.js for optimal learning experience.",
+      initials: "FL",
+      gradient: "from-green-600 to-teal-600",
+      link: "https://fiz-learning.netlify.app",
+      git_link:'https://github.com/FizOkor/learning_app',
+      tech: ["React", "JavaScript", "CSS", "Responsive Design"],
     },
   ];
 
@@ -41,35 +54,36 @@ export default function ProjectsPage() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors group"
+                className="border border-white/10 rounded-lg p-6 hover:border-white/20 group hover:-translate-y-2 duration-300 ease-in"
               >
                 <div className="flex gap-6">
-                  <div className="flex-shrink-0">
-                    <div
-                      className={`w-20 h-20 rounded-full bg-gradient-to-br ${project.gradient} flex items-center justify-center border border-white/10 shadow-lg`}
-                    >
-                      <span className="text-white font-bold text-2xl tracking-tight">
-                        {project.initials}
-                      </span>
-                    </div>
-                  </div>
-
+                  
                   <div className="flex-1">
                     <div className="flex items-start justify-between mb-3">
                       <h2 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
                         {project.title}
                       </h2>
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white/60 hover:text-white transition-colors"
-                      >
-                        <ExternalLink className="h-5 w-5" />
-                      </a>
+                      <div className="flex gap-4">
+                        <a
+                          href={project.git_link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-white/60 hover:text-white transition-colors"
+                        >
+                          <Github className="h-5 w-5" />
+                        </a>
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-white/60 hover:text-white transition-colors"
+                        >
+                          <ExternalLink className="h-5 w-5" />
+                        </a>
+                      </div>
                     </div>
 
-                    <p className="text-white/60 text-sm leading-relaxed mb-4">
+                    <p className="text-white/60 text-md leading-relaxed mb-4">
                       {project.description}
                     </p>
 

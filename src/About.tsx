@@ -1,10 +1,10 @@
 import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import avatar from './assets/fizz0_avatar.png'
 
 export default function About() {
   return (
     <div className="min-h-screen bg-[#151517]">
-
       <div className="max-w-5xl mx-auto px-8 md:px-16 lg:px-24">
         <main className="max-w-4xl mx-auto py-16">
           <section className="mb-20">
@@ -17,23 +17,26 @@ export default function About() {
                 </h2>
 
                 <p className="text-white/70 leading-relaxed mb-6">
-                  I am a full-stack web developer with a strong foundation in modern web technologies and a growing
-                  focus on Web3. With experience in building responsive, user-friendly applications, I specialize in
-                  crafting web solutions that prioritize performance and user experience. I'm passionate about
-                  blockchain technologies and continuously advancing my skills to deliver innovative applications.
+                  I am a full-stack web developer with a strong foundation in
+                  modern web technologies and a growing focus on Web3. With
+                  experience in building responsive, user-friendly applications,
+                  I specialize in crafting web solutions that prioritize
+                  performance and user experience. I'm passionate about
+                  blockchain technologies and continuously advancing my skills
+                  to deliver innovative applications.
                 </p>
 
                 <a
-                  href="/resume.pdf"
+                  href="https://drive.google.com/file/d/11KnKC0eGMCE8vM2FqICcFTiGnPZ1f-8X/view?usp=sharing"
                   className="inline-block text-white underline hover:text-blue-400 transition-colors"
                 >
-                  Download Resume
+                  View Resume
                 </a>
               </div>
 
               <div className="flex justify-center md:justify-end">
-                <div className="w-48 h-48 rounded-2xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center shadow-2xl border border-white/10">
-                  <span className="text-white font-bold text-7xl tracking-tight">FO</span>
+                <div className="w-48 h-48 rounded-2xl flex items-center justify-center shadow-2xl border border-white/10 overflow-hidden">
+                  <img src={avatar} className="h-full w-full object-cover" />
                 </div>
               </div>
             </div>
@@ -71,12 +74,12 @@ export default function About() {
                 <div>
                   <p className="text-white/50 text-sm mb-1">GitHub</p>
                   <a
-                    href="https://github.com/fizokor"
+                    href="https://github.com/FizOkor"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-blue-400 transition-colors"
                   >
-                    fizokor
+                    github.com/FizOkor
                   </a>
                 </div>
 
@@ -166,13 +169,11 @@ export default function About() {
                 ].map(({ role, org, date, color, short, points }) => (
                   <div key={role}>
                     <div className="flex gap-4 mb-4">
-                      <div
-                        className={`w-12 h-12 rounded-full bg-gradient-to-br ${color} flex items-center justify-center flex-shrink-0 border border-white/10 shadow-lg`}
-                      >
-                        <span className="text-white font-bold text-sm">{short}</span>
-                      </div>
+                      
                       <div className="flex-1">
-                        <h4 className="text-white font-semibold text-lg">{role}</h4>
+                        <h4 className="text-white font-semibold text-lg">
+                          {role}
+                        </h4>
                         <p className="text-white/60">{org}</p>
                       </div>
                     </div>
@@ -188,61 +189,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* Projects Section */}
-          <section className="mt-20">
-            <h3 className="text-2xl font-bold mb-8">Projects</h3>
-
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <a
-                href="https://d-arena.onrender.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block group border border-white/10 rounded-lg overflow-hidden hover:border-white/20 transition-colors"
-              >
-                <div className="aspect-video bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
-                  <span className="text-white font-bold text-6xl tracking-tight">DA</span>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-white font-semibold text-xl mb-2 group-hover:text-blue-400 transition-colors">
-                    D_Arena
-                  </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">
-                    Web3 gaming platform where players stake assets to compete in real-time games. Built with React,
-                    Node.js, Express, and Socket.IO.
-                  </p>
-                </div>
-              </a>
-
-              <a
-                href="https://fiz-learning.netlify.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block group border border-white/10 rounded-lg overflow-hidden hover:border-white/20 transition-colors"
-              >
-                <div className="aspect-video bg-gradient-to-br from-green-600 to-teal-600 flex items-center justify-center">
-                  <span className="text-white font-bold text-6xl tracking-tight">FL</span>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-white font-semibold text-xl mb-2 group-hover:text-blue-400 transition-colors">
-                    Fiz Learning
-                  </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">
-                    Online education platform with smooth course access and user-friendly interface. Developed with
-                    React.js.
-                  </p>
-                </div>
-              </a>
-            </div>
-
-            <Link
-              to="/projects"
-              className="inline-block px-6 py-2.5 border border-white/10 text-white font-medium rounded-md hover:border-white/20 transition-colors"
-            >
-              View all
-            </Link>
-          </section>
         </main>
-
       </div>
     </div>
   );
