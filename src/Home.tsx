@@ -66,12 +66,12 @@ export default function Home() {
               When I’m not staring at VS Code, you’ll probably find me making beats in FL Studio or exploring ideas that mix creativity and code.
             </p>
 
-            <a
-              href="#about"
+            <Link
+              to="/about"
               className="inline-block px-6 py-2.5 bg-white text-black font-medium rounded-md hover:bg-white/90 transition-colors"
             >
               About me
-            </a>
+            </Link>
           </section>
 
           {/* === Projects Section === */}
