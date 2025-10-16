@@ -1,5 +1,4 @@
 import { MapPin } from "lucide-react";
-import { Link } from "react-router-dom";
 import avatar from './assets/fizz0_avatar.png'
 
 export default function About() {
@@ -166,7 +165,7 @@ export default function About() {
                       "Analyzed datasets using Pandas/NumPy; created insights and visualizations in Excel",
                     ],
                   },
-                ].map(({ role, org, date, color, short, points }) => (
+                ].map(({ role, org, date, points }) => (
                   <div key={role}>
                     <div className="flex gap-4 mb-4">
                       
