@@ -1,8 +1,8 @@
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import avatar from './assets/fizz0_avatar.png'
-import d_arena_img from './assets/d-arena-site.png'
-import echogear_img from './assets/echogear-site.png'
+import avatar from "./assets/fizz0_avatar.png";
+import d_arena_img from "./assets/d-arena-site.png";
+import echogear_img from "./assets/echogear-site.png";
 
 const experiences = [
   {
@@ -61,9 +61,15 @@ export default function Home() {
             <h1 className="text-5xl font-bold mb-4">Hey, I'm Favour Okor</h1>
 
             <p className="text-white/70 text-xl leading-relaxed max-w-3xl mb-8">
-              I’m a software engineer focused on building thoughtful, user-first web experiences. 
-              Lately, I’ve been working on <a href='https://d-arena.onrender.com/' className='underline'>D_Arena</a> — a Web3 gaming platform where players stake to compete in nostalgic games. 
-              When I’m not staring at VS Code, you’ll probably find me making beats in FL Studio or exploring ideas that mix creativity and code.
+              I’m a software engineer focused on building thoughtful, user-first
+              web experiences. Lately, I’ve been working on{" "}
+              <a href="https://d-arena.onrender.com/" className="underline">
+                D_Arena
+              </a>{" "}
+              — a Web3 gaming platform where players stake to compete in
+              nostalgic games. When I’m not staring at VS Code, you’ll probably
+              find me making beats in FL Studio or exploring ideas that mix
+              creativity and code.
             </p>
 
             <Link
@@ -87,7 +93,11 @@ export default function Home() {
                 className="block group border border-white/10 rounded-lg overflow-hidden hover:border-white/20 transition-colors"
               >
                 <div className="aspect-video flex items-center justify-center">
-                  <img src={d_arena_img} alt='D_Arena' className='h-full w-full object-cover grayscale hover:grayscale-0 duration-300 ease-in' />
+                  <img
+                    src={d_arena_img}
+                    alt="D_Arena"
+                    className="h-full w-full object-cover grayscale hover:grayscale-0 duration-300 ease-in"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-white font-semibold text-xl mb-2 group-hover:text-blue-400 transition-colors">
@@ -110,14 +120,20 @@ export default function Home() {
                 className="block group border border-white/10 rounded-lg overflow-hidden hover:border-white/20 transition-colors"
               >
                 <div className="aspect-video flex items-center justify-center">
-                  <img src={echogear_img} alt='echoGear' className="h-full w-full object-cover grayscale hover:grayscale-0 duration-300 ease-in" />
+                  <img
+                    src={echogear_img}
+                    alt="echoGear"
+                    className="h-full w-full object-cover grayscale hover:grayscale-0 duration-300 ease-in"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-white font-semibold text-xl mb-2 group-hover:text-blue-400 transition-colors">
                     Echo Gear
                   </h3>
                   <p className="text-white/60 text-sm leading-relaxed">
-                    An e-commerce website focused on selling high-quality headphones, offering a wide range of options for all kinds of listeners.
+                    An e-commerce website focused on selling high-quality
+                    headphones, offering a wide range of options for all kinds
+                    of listeners.
                   </p>
                 </div>
               </a>
@@ -138,13 +154,19 @@ export default function Home() {
             <div className="relative">
               <div className="space-y-16">
                 {experiences.map((exp) => (
-                  <div key={exp.title} className="flex gap-8 hover:-translate-y-2 duration-300 ease-in">
-                    <div className="w-[140px] text-right pt-1 flex-shrink-0">
+                  <div
+                    key={exp.title}
+                    className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 hover:-translate-y-2 duration-300 ease-in"
+                  >
+                    {/* Period column */}
+                    <div className="md:w-[140px] md:text-right text-left pt-1 flex-shrink-0">
                       <span className="text-white/50 text-sm whitespace-nowrap">
                         {exp.period}
                       </span>
                     </div>
-                    <div className="flex-1 border border-white/10 rounded-lg p-6">
+
+                    {/* Experience card */}
+                    <div className="flex-1 border border-white/10 rounded-lg p-4 md:p-6">
                       <h3 className="text-white font-semibold text-lg mb-1">
                         {exp.title}
                       </h3>
