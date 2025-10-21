@@ -1,7 +1,63 @@
 import { MapPin } from "lucide-react";
-import avatar from './assets/fizz0_avatar.png'
+import avatar from "./assets/fizz0_avatar.png";
+import { CertificationCard } from "./components/CertificationCard";
 
 export default function About() {
+  const certifications = [
+    {
+      initials: "SC",
+      title: "Smart Contract Development",
+      issuer: "FTLD",
+      date: "Jun 2025",
+      description:
+        "Advanced certification in smart contract development and DeFi protocols, covering blockchain architecture and decentralized finance applications.",
+      img_src: "/images/certificates/ftld_smart-contract_cert.jpg",
+      certificateUrl: "https://www.linkedin.com/in/favour-okor/details/certifications/1755855032106/single-media-viewer/",
+    },
+    {
+      initials: "BE",
+      title: "Back End Development and APIs",
+      issuer: "FreeCodeCamp",
+      date: "Apr 2025",
+      description:
+        "Comprehensive backend development certification covering server-side programming, RESTful APIs, database design, and API security best practices.",
+      img_src: "/images/certificates/fCC_backend_cert.png",
+      certificateUrl: "https://www.freecodecamp.org/certification/fizelectro/back-end-development-and-apis",
+    },
+    {
+      initials: "JS",
+      title: "JavaScript Algorithms and Data Structures",
+      issuer: "FreeCodeCamp",
+      date: "Feb 2025",
+      description:
+        "In-depth certification covering JavaScript fundamentals, algorithms, data structures, and problem-solving techniques for efficient code development.",
+      img_src: "/images/certificates/fCC_javascript_cert.png",
+      certificateUrl: "https://www.freecodecamp.org/certification/fizelectro/javascript-algorithms-and-data-structures-v8",
+    },
+    {
+      initials: "RW",
+      title: "Responsive Web Design",
+      issuer: "FreeCodeCamp",
+      date: "Sep 2024",
+      description:
+        "Certification in responsive web design principles, mobile-first development, CSS Grid, Flexbox, and creating accessible web experiences across all devices.",
+      img_src: "/images/certificates/fCC_web-design_cert.png",
+      certificateUrl:
+        "https://www.freecodecamp.org/certification/fizelectro/responsive-web-design",
+    },
+    {
+      initials: "PD",
+      title: "Python & Data Science",
+      issuer:
+        "Center for Information and Telecommunications Engineering (C.I.T.E)",
+      date: "Sep 2022",
+      description:
+        "Professional certification in Python programming and data science, covering Pandas, NumPy, Matplotlib, Scikit-learn, and data analysis techniques.",
+      img_src: "/images/certificates/cite_data-science_cert.png",
+      certificateUrl: "https://www.linkedin.com/in/favour-okor/details/certifications/1717073708105/single-media-viewer/",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-[#151517]">
       <div className="max-w-5xl mx-auto px-8 md:px-16 lg:px-24">
@@ -125,69 +181,17 @@ export default function About() {
               </div>
             </div>
 
-            {/* Experience Section */}
+            {/* Certifications Section */}
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-bold mb-8">Experience</h3>
+              <h3 className="text-2xl font-bold mb-5">Certifications</h3>
 
-              <div className="space-y-10">
-                {[
-                  {
-                    role: "Web Developer (Freelance/Contract)",
-                    org: "Freelance",
-                    date: "Jan 2022 - Present",
-                    color: "from-blue-600 to-purple-600",
-                    short: "F",
-                    points: [
-                      "Built and optimized websites for performance, scalability, and cross-browser compatibility",
-                      "Improved page load speed by up to 40% on client sites",
-                      "Delivered responsive, user-friendly designs aligned with client needs",
-                    ],
-                  },
-                  {
-                    role: "Instructor – Python & Data Science",
-                    org: "C.I.T.E",
-                    date: "Aug 2022 - Dec 2022",
-                    color: "from-green-600 to-teal-600",
-                    short: "CI",
-                    points: [
-                      "Taught Python and data science concepts (Pandas, NumPy, Matplotlib, Scikit-learn)",
-                      "Guided students through hands-on projects, fostering problem-solving and collaboration",
-                    ],
-                  },
-                  {
-                    role: "Data Science Intern",
-                    org: "C.I.T.E",
-                    date: "Jun 2021 - Dec 2021",
-                    color: "from-orange-600 to-red-600",
-                    short: "CI",
-                    points: [
-                      "Applied Python for scripting, automation, and data handling",
-                      "Analyzed datasets using Pandas/NumPy; created insights and visualizations in Excel",
-                    ],
-                  },
-                ].map(({ role, org, date, points }) => (
-                  <div key={role}>
-                    <div className="flex gap-4 mb-4">
-                      
-                      <div className="flex-1">
-                        <h4 className="text-white font-semibold text-lg">
-                          {role}
-                        </h4>
-                        <p className="text-white/60">{org}</p>
-                      </div>
-                    </div>
-                    <p className="text-white/40 text-sm mb-3">{date}</p>
-                    <ul className="text-white/60 text-sm leading-relaxed space-y-2 ml-16">
-                      {points.map((p) => (
-                        <li key={p}>• {p}</li>
-                      ))}
-                    </ul>
-                  </div>
+              <div className="grid md:grid-cols-2 md:gap-2">
+                {certifications.map((cert) => (
+                  <CertificationCard key={cert.title} {...cert} />
                 ))}
               </div>
             </div>
           </div>
-
         </main>
       </div>
     </div>
